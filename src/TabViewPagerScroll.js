@@ -90,7 +90,7 @@ export default class TabViewPagerScroll<T: Route<*>> extends React.Component<
     this.props.offsetX.setValue(-x);
     this.props.panX.setValue(0);
 
-    if (x !== this._currentOffset && this._scrollView) {
+    if (x !== this._currentOffset && this._scrollView && this._scrollView.scrollTo) {
       this._scrollView.scrollTo({
         x,
         animated,
